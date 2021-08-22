@@ -1,0 +1,18 @@
+kzj 
+kzj611611
+
+进入页面  容器名字:8001/， 如http://gateway:8001/
+
+jwt配置：
+创建用户
+curl -i -X POST \
+--url http://localhost:8001/consumers/ \
+--data "username=aoho1"
+
+获取用户的JWT凭证
+curl -i -X POST \
+--url http://localhost:8001/consumers/aoho1/jwt \
+--header "Content-Type: application/x-www-form-urlencoded"
+
+
+

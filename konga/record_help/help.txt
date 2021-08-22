@@ -1,0 +1,14 @@
+1.请求接口创建服务
+curl -i -X POST \
+--url http://localhost:8001/services/ \
+--data 'name=to_baidu' \
+--data 'url=http://www.baidu.com/'
+
+
+2.请求接口创建路由
+curl -i -X POST \
+--url http://localhost:8001/services/to_baidu/routes \
+--data 'hosts[]=www.baidu.com' \
+--data 'paths[]=/api_new'
+
+

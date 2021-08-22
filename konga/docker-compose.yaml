@@ -1,0 +1,42 @@
+version: '3'
+networks:
+  konga-net:
+    external:
+      name: "kong-net"
+services:
+    db:
+      image: mysql/mysql-server:5.7.22 
+      volumes:
+        - /Users/junzhang/Documents/code/kong_fccv/cassandra-kong/konga/data:/var/lib/mysql
+        - /Users/junzhang/Documents/code/kong_fccv/cassandra-kong/konga/my.cnf:/etc/my.cnf
+      networks:
+        - konga-net
+      restart: always
+      command:
+        - mysqld
+        - --defaults-file=/etc/my.cnf
+        - --socket=/var/lib/mysql/mysql.sock
+        - --pid-file=/var/lib/mysql/mysql.pid
+        - --character-set-server=utf8
+      environment:
+        MYSQL_ROOT_PASSWORD: 123
+        MYSQL_DATABASE: konga
+        MYSQL_USER: root
+        MYSQL_PASSWORD: 123
+    konga:
+      image: pantsel/konga:latest
+      ports:
+        - 1338:1337
+      networks:
+        - konga-net
+      environment:
+        - DB_ADAPTER=mysql
+        - DB_HOST=db
+        - DB_PORT=3306
+        - DB_USER=root
+        - DB_PASSWORD=123
+        - DB_DATABASE=konga
+        - NODE_ENV=development
+
+
+

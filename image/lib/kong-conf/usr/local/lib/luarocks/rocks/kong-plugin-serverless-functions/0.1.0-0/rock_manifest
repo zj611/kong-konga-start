@@ -1,0 +1,22 @@
+rock_manifest = {
+   doc = {
+      ["CHANGELOG.md"] = "fa2e3febedee23a0f3e4704c3f978cca",
+      LICENSE = "5d68c270cf53adb204b5fef890e9de2b",
+      ["README.md"] = "4ecf6ba1993fa69433f13b7c73da83e9"
+   },
+   ["kong-plugin-serverless-functions-0.1.0-0.rockspec"] = "13e4f7468fc0bf94a32e4e8750593800",
+   lua = {
+      kong = {
+         plugins = {
+            ["post-function"] = {
+               ["handler.lua"] = "9010fb05b0a505099b4ab765ef5454c8",
+               ["schema.lua"] = "408158f086e54b3d0f6ed23f49bc0b58"
+            },
+            ["pre-function"] = {
+               ["handler.lua"] = "9151c1e68b76e24a86490eef5bf11855",
+               ["schema.lua"] = "d94e40bd112b46c6da49731083cd5eec"
+            }
+         }
+      }
+   }
+}
