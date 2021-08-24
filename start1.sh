@@ -7,6 +7,7 @@ docker run --restart always \
      -p 7000:7000 \
      -p 9042:9042 \
      cassandra:3
+
 #     ccr.ccs.tencentyun.com/fccv/cassandra:3
 # -v /Users/junzhang/Documents/code/kong_fccv/cassandra/cassandra.yaml:/etc/cassandra/cassandra.yaml \
 #-e CASSANDRA_BROADCAST_ADDRESS=10.1.0.32 \
